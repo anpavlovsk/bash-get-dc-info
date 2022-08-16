@@ -1,6 +1,6 @@
 # A sample shell script to print domain ip address hosting information such as
-# Location of server, city, ip address owner, country and network range.  
-# ---------------------------------------------------------------------------- 
+# Location of server, city, weather, ip address owner, country and network range.  
+# -------------------------------------------------------------------------------- 
 
 # Die if no domains are given
 [ -z $1 ] && { echo "Usage: $0 domain1.com domain2.com ..."; exit 1; }
@@ -15,7 +15,7 @@ function get_dc_info {
 }
 
 function get_weather_info {
-	_city=$( whois "$_ip" | egrep -w 'City:' | awk '{print $2}') 
+	_city=$( whois "$_ip" | egrep -w 'City:' | awk '{print $2 $3}') 
         [ "$_city" == "" ] && { echo "Error: Didn't get valid city name."; return 1; } 
 	curl https://wttr.in/$_city
         echo ""
