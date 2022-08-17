@@ -5,6 +5,8 @@ Run script:
 ````
 ./getdcinfo.sh tesla.com cisco.com nonexistingexample
 ````
+Sample outputs:
+````
 ########## tesla.com [ 184.50.204.169 ] ##########
 NetRange:       184.50.0.0 - 184.51.255.255
 OriginAS:       
@@ -104,7 +106,4 @@ Follow @igor_chubin for wttr.in updates
 Error: nonexistingexample is not valid domain or dns error.
 Error: Didn't get valid city name.
 TOTAL DOMAINS: 2
-
-
-
 ````
